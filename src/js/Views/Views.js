@@ -60,13 +60,13 @@ class Views {
       <div class="task grid" data-id="${id}">
         <div class="task__status">
           <input
-            class="task__checkbox"
+            class="task__complete js-complete"
             type="checkbox"
             name="status"
             id="${id}"
             data-id="${id}"
           />
-          <label class="task__checkbox-label" for="${id}"></label>
+          <label class="task__complete-label" for="${id}"></label>
         </div>
         <div class="task__name">
           <div class="task__name-content js-task-content">${name}</div>

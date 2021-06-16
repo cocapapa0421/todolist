@@ -17,6 +17,7 @@ class App {
     this.form.addEventListener("submit", this.addTask.bind(this));
     this.taskList.addEventListener("click", this.editTask.bind(this));
     this.taskList.addEventListener("click", this.removeTask.bind(this));
+    this.taskList.addEventListener("change", this.completeTask.bind(this));
   }
 
   addTask(e) {
@@ -96,6 +97,17 @@ class App {
 
     editForm.remove();
     elements.overlay.classList.remove("is-active");
+  }
+
+  completeTask(event) {
+    const inputEl = event.target.closest(".js-complete");
+    if (!inputEl) return;
+    const { checked } = inputEl;
+    const task = inputEl.closest(".task");
+
+    checked
+      ? task.classList.add("is-complete")
+      : task.classList.remove("is-complete");
   }
 }
 
